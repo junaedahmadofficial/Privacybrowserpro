@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ════════════════════════════════
+         PERMISSIONS
+    ════════════════════════════════ -->
+
+    <!-- Internet access — required for browsing -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Network state — for offline detection -->
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- Downloads — for file saving -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"
+        tools:ignore="ScopedStorage"/>
+
+    <!-- Download without notification -->
+    <uses-permission
+        android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+
+    <!-- ════════════════════════════════
+         APPLICATION
+    ════════════════════════════════ -->
+    <application
+        android:name=".PrivacyBrowserApp"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="false"
+        android:icon="@drawable/ic_launcher"
+        android:roundIcon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PrivacyBrowser"
+        android:hardwareAccelerated="true"
+        android:largeHeap="false"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <!-- ══ MAIN BROWSER ACTIVITY ══ -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="unspecified">
+
+            <!-- App launcher -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+            <!-- Handle HTTP/HTTPS links from other apps -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+
+            <!-- Share target — receive shared URLs -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+
+        </activity>
+
+        <!-- ══ TAB SWITCHER ACTIVITY ══ -->
+        <activity
+            android:name=".ui.TabSwitcherActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PrivacyBrowser"
+            android:windowSoftInputMode="stateHidden"/>
+
+        <!-- ══ SETTINGS ACTIVITY ══ -->
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PrivacyBrowser"
+            android:windowSoftInputMode="adjustPan"
+            android:parentActivityName=".MainActivity"/>
+
+        <!-- ══ DOWNLOAD RECEIVER ══ -->
+        <receiver
+            android:name=".browser.DownloadReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name=
+                    "android.intent.action.DOWNLOAD_COMPLETE"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

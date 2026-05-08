@@ -1,0 +1,46 @@
+! EasyList — Starter rules (replace with full list)
+! Full list: https://easylist.to/easylist/easylist.txt
+! Last updated: 2024
+[Adblock Plus 2.0]
+! === MAJOR AD NETWORKS ===
+||doubleclick.net^
+||googlesyndication.com^
+||googleadservices.com^
+||googletagmanager.com^
+||google-analytics.com^
+||adservice.google.com^
+||amazon-adsystem.com^
+||facebook.net^
+||connect.facebook.net^
+! === AD EXCHANGES ===
+||rubiconproject.com^
+||openx.net^
+||pubmatic.com^
+||appnexus.com^
+||taboola.com^
+||outbrain.com^
+||criteo.com^
+||criteo.net^
+||adroll.com^
+! === TRACKERS ===
+||hotjar.com^
+||mixpanel.com^
+||segment.com^
+||amplitude.com^
+||scorecardresearch.com^
+||quantserve.com^
+||comscore.com^
+||demdex.net^
+||parsely.com^
+! === URL PATTERNS ===
+/advertisement/
+/advertising/
+/banner/ad/
+/popup/
+/tracker/
+/tracking/
+/analytics/
+/pixel/
+/beacon/
+/pagead/
+/adsense/

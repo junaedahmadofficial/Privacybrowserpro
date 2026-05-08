@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors -->
+    <color name="primary">#1e1e1e</color>
+    <color name="primary_dark">#121212</color>
+    <color name="accent">#2979ff</color>
+    <color name="accent_light">#7eb3ff</color>
+
+    <!-- Background Layers -->
+    <color name="bg_deepest">#0d0d0d</color>
+    <color name="bg_dark">#121212</color>
+    <color name="bg_surface">#1e1e1e</color>
+    <color name="bg_elevated">#252525</color>
+    <color name="bg_card">#2a2a2a</color>
+
+    <!-- Text -->
+    <color name="text_primary">#ffffff</color>
+    <color name="text_secondary">#aaaaaa</color>
+    <color name="text_hint">#666666</color>
+    <color name="text_disabled">#444444</color>
+
+    <!-- Status Colors -->
+    <color name="secure_green">#4CAF50</color>
+    <color name="warning_orange">#FF9800</color>
+    <color name="error_red">#f44336</color>
+    <color name="private_purple">#9c27b0</color>
+    <color name="private_light">#ce93d8</color>
+
+    <!-- Private Mode -->
+    <color name="private_bg">#1a0a2e</color>
+    <color name="private_surface">#220d3a</color>
+
+    <!-- Divider -->
+    <color name="divider">#2a2a2a</color>
+
+    <!-- Tab Badge -->
+    <color name="badge_normal">#2979ff</color>
+    <color name="badge_private">#7c4dff</color>
+</resources>

@@ -1,0 +1,36 @@
+! EasyPrivacy — Starter rules (replace with full list)
+! Full list: https://easylist.to/easylist/easyprivacy.txt
+[Adblock Plus 2.0]
+! === FINGERPRINTING ===
+||fingerprintjs.com^
+||fingerprint.com^
+||iovation.com^
+! === BEHAVIORAL TRACKING ===
+||fullstory.com^
+||heap.io^
+||mouseflow.com^
+||crazyegg.com^
+||clicktale.com^
+||sessioncam.com^
+! === AD TARGETING ===
+||bluekai.com^
+||krxd.net^
+||krux.com^
+||exelate.com^
+||turn.com^
+||addthis.com^
+! === SOCIAL TRACKERS ===
+||analytics.twitter.com^
+||ads.twitter.com^
+||analytics.tiktok.com^
+||ads.linkedin.com^
+||bat.bing.com^
+! === PATTERNS ===
+/telemetry/
+/fingerprint/
+/tracking.js
+/analytics.js
+/pixel.js
+/ga.js
+/gtag.js
+/fbevents.js

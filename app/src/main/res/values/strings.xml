@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Privacy Browser Pro</string>
+    <string name="search_hint">Search or enter address</string>
+    <string name="private_hint">Private search or address</string>
+    <string name="new_tab">New Tab</string>
+    <string name="private_tab">Private Tab</string>
+    <string name="no_internet">No internet connection</string>
+    <string name="back">Back</string>
+    <string name="forward">Forward</string>
+    <string name="home">Home</string>
+    <string name="tabs">Tabs</string>
+    <string name="menu">Menu</string>
+    <string name="settings">Settings</string>
+    <string name="clear">Clear</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="ad_block_enabled">Ad blocking enabled</string>
+    <string name="ad_block_disabled">Ad blocking disabled</string>
+    <string name="private_mode_on">Private mode on</string>
+    <string name="private_mode_off">Private mode off</string>
+    <string name="ssl_secure">Secure connection</string>
+    <string name="ssl_insecure">Connection not secure</string>
+    <string name="proxy_enabled">Proxy enabled</string>
+    <string name="proxy_disabled">Proxy disabled</string>
+    <string name="orbot_required">Orbot Required</string>
+    <string name="orbot_message">
+        Tor-like routing requires Orbot app.
+        Install from Play Store?
+    </string>
+    <string name="press_back_exit">Press back again to exit</string>
+    <string name="page_not_available">Page Not Available</string>
+    <string name="go_back">Go Back</string>
+</resources>

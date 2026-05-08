@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/settings_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#1e1e1e"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="outsideOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- ══ SECTION: PRIVACY ══ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔒  PRIVACY &amp; SECURITY"
+                android:textColor="#2979ff"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:paddingStart="16dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="8dp"/>
+
+            <!-- AdBlock -->
+            <LinearLayout
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Ad Blocking"/>
+                    <TextView style="@style/SettingsSubtitle"
+                        android:id="@+id/tv_adblock_stats"
+                        android:text="Loading rules..."/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switch_adblock"
+                    style="@style/SettingsSwitch"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- Block Third-Party Cookies -->
+            <LinearLayout style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Block Third-Party Cookies"/>
+                    <TextView style="@style/SettingsSubtitle"
+                        android:text="Prevent cross-site tracking"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switch_block_third_party"
+                    style="@style/SettingsSwitch"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- Do Not Track -->
+            <LinearLayout style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Do Not Track (DNT)"/>
+                    <TextView style="@style/SettingsSubtitle"
+                        android:text="Send DNT &amp; Sec-GPC headers"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switch_do_not_track"
+                    style="@style/SettingsSwitch"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- Private Mode Default -->
+            <LinearLayout style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Start in Private Mode"/>
+                    <TextView style="@style/SettingsSubtitle"
+                        android:text="Default to private browsing"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switch_private_default"
+                    style="@style/SettingsSwitch"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- Save History -->
+            <LinearLayout style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Save Browsing History"/>
+                    <TextView style="@style/SettingsSubtitle"
+                        android:text="Disabled in private mode"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switch_save_history"
+                    style="@style/SettingsSwitch"/>
+            </LinearLayout>
+
+            <!-- ══ SECTION: PROXY ══ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🌐  PROXY / TOR MODE"
+                android:textColor="#2979ff"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:paddingStart="16dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="4dp"/>
+
+            <!-- Proxy Status -->
+            <TextView
+                android:id="@+id/tv_proxy_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Off (Direct connection)"
+                android:textColor="#888888"
+                android:textSize="12sp"
+                android:paddingStart="16dp"
+                android:paddingBottom="8dp"/>
+
+            <!-- Proxy OFF -->
+            <LinearLayout
+                android:id="@+id/row_proxy_off"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Off (Direct)"/>
+                    <TextView style="@style/SettingsSubtitle"
+                        android:text="Standard connection"/>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_check"
+                    android:tint="#4CAF50"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- HTTP Proxy -->
+            <LinearLayout
+                android:id="@+id/row_proxy_http"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="HTTP Proxy (Orbot)"/>
+                    <TextView style="@style/SettingsSubtitle"
+                        android:text="Port 8118 — requires Orbot"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- SOCKS5 Proxy -->
+            <LinearLayout
+                android:id="@+id/row_proxy_socks5"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="SOCKS5 Proxy (Orbot)"/>
+                    <TextView style="@style/SettingsSubtitle"
+                        android:text="Port 9050 — Tor network"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- Custom Proxy -->
+            <LinearLayout
+                android:id="@+id/row_proxy_custom"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Custom Proxy"/>
+                    <TextView style="@style/SettingsSubtitle"
+                        android:text="Enter manual host and port"/>
+                </LinearLayout>
+                <ImageView style="@style/ChevronIcon"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- Test Proxy -->
+            <LinearLayout
+                android:id="@+id/row_test_proxy"
+                style="@style/SettingsRow">
+                <TextView style="@style/SettingsTitle"
+                    android:text="Test Proxy Connection"
+                    android:textColor="#2979ff"/>
+            </LinearLayout>
+
+            <!-- Proxy Test Result -->
+            <TextView
+                android:id="@+id/tv_proxy_test_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+            <View style="@style/Divider"/>
+
+            <!-- Open Orbot -->
+            <LinearLayout
+                android:id="@+id/row_open_orbot"
+                style="@style/SettingsRow">
+                <TextView style="@style/SettingsTitle"
+                    android:text="Open / Install Orbot 🧅"
+                    android:textColor="#9c27b0"/>
+            </LinearLayout>
+
+            <!-- ══ SECTION: BROWSER ══ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🖥  BROWSER SETTINGS"
+                android:textColor="#2979ff"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:paddingStart="16dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="8dp"/>
+
+            <!-- JavaScript -->
+            <LinearLayout style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="JavaScript"/>
+                    <TextView style="@style/SettingsSubtitle"
+                        android:text="Disable may break some sites"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switch_javascript"
+                    style="@style/SettingsSwitch"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- Dark Mode -->
+            <LinearLayout style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Dark Mode Injection"/>
+                    <TextView style="@style/SettingsSubtitle"
+                        android:text="Apply dark CSS to all pages"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switch_dark_mode"
+                    style="@style/SettingsSwitch"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- Search Engine -->
+            <LinearLayout
+                android:id="@+id/row_search_engine"
+                style="@style/SettingsRow"
+                android:background="?android:attr/selectableItemBackground">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Search Engine"/>
+                    <TextView
+                        android:id="@+id/tv_search_engine"
+                        style="@style/SettingsSubtitle"
+                        android:text="DuckDuckGo"/>
+                </LinearLayout>
+                <ImageView style="@style/ChevronIcon"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- Home Page -->
+            <LinearLayout
+                android:id="@+id/row_home_page"
+                style="@style/SettingsRow"
+                android:background="?android:attr/selectableItemBackground">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Home Page"/>
+                    <TextView
+                        android:id="@+id/tv_home_page"
+                        style="@style/SettingsSubtitle"
+                        android:text="duckduckgo.com"/>
+                </LinearLayout>
+                <ImageView style="@style/ChevronIcon"/>
+            </LinearLayout>
+
+            <!-- ══ SECTION: DATA ══ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🗑  DATA MANAGEMENT"
+                android:textColor="#2979ff"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:paddingStart="16dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="8dp"/>
+
+            <!-- Clear History -->
+            <LinearLayout
+                android:id="@+id/row_clear_history"
+                style="@style/SettingsRow"
+                android:background="?android:attr/selectableItemBackground">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Clear Browsing History"/>
+                    <TextView
+                        android:id="@+id/tv_history_count"
+                        style="@style/SettingsSubtitle"
+                        android:text="0 items"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- Clear Cookies -->
+            <LinearLayout
+                android:id="@+id/row_clear_cookies"
+                style="@style/SettingsRow"
+                android:background="?android:attr/selectableItemBackground">
+                <TextView style="@style/SettingsTitle"
+                    android:text="Clear Cookies"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- Clear Cache -->
+            <LinearLayout
+                android:id="@+id/row_clear_cache"
+                style="@style/SettingsRow"
+                android:background="?android:attr/selectableItemBackground">
+                <TextView style="@style/SettingsTitle"
+                    android:text="Clear Cache"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <!-- Clear ALL -->
+            <LinearLayout
+                android:id="@+id/row_clear_all"
+                style="@style/SettingsRow"
+                android:background="?android:attr/selectableItemBackground">
+                <TextView style="@style/SettingsTitle"
+                    android:text="Clear All Browsing Data"
+                    android:textColor="#f44336"/>
+            </LinearLayout>
+
+            <!-- ══ SECTION: STATS ══ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📊  STATS"
+                android:textColor="#2979ff"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:paddingStart="16dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="8dp"/>
+
+            <LinearLayout style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Ads Blocked"/>
+                    <TextView
+                        android:id="@+id/tv_ads_blocked"
+                        style="@style/SettingsSubtitle"
+                        android:text="0 ads blocked"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <LinearLayout style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="History Entries"/>
+                    <TextView
+                        android:id="@+id/tv_history_entries"
+                        style="@style/SettingsSubtitle"
+                        android:text="0 entries"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <LinearLayout style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsTitle"
+                        android:text="Connection"/>
+                    <TextView
+                        android:id="@+id/tv_connection_type"
+                        style="@style/SettingsSubtitle"
+                        android:text="WiFi"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <LinearLayout style="@style/SettingsRow">
+                <TextView
+                    android:id="@+id/tv_app_version"
+                    style="@style/SettingsSubtitle"
+                    android:text="Version 1.0.0"
+                    android:textColor="#555555"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

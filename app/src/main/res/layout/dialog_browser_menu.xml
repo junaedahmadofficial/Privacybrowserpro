@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet"
+    android:paddingBottom="16dp">
+
+    <!-- Handle bar -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_handle"/>
+
+    <!-- AdBlock stats -->
+    <TextView
+        android:id="@+id/tv_adblock_stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="12dp"
+        android:textColor="#4CAF50"
+        android:textSize="12sp"
+        android:text="🛡 0 ads blocked"/>
+
+    <View style="@style/Divider"/>
+
+    <!-- New Tab -->
+    <LinearLayout
+        android:id="@+id/menu_new_tab"
+        style="@style/MenuRow">
+        <ImageView style="@style/MenuIcon"
+            android:src="@drawable/ic_add"
+            android:tint="#ffffff"/>
+        <TextView style="@style/MenuText"
+            android:text="New Tab"/>
+    </LinearLayout>
+
+    <!-- New Private Tab -->
+    <LinearLayout
+        android:id="@+id/menu_new_private_tab"
+        style="@style/MenuRow">
+        <ImageView style="@style/MenuIcon"
+            android:src="@drawable/ic_private"
+            android:tint="#ce93d8"/>
+        <TextView style="@style/MenuText"
+            android:text="New Private Tab"
+            android:textColor="#ce93d8"/>
+    </LinearLayout>
+
+    <View style="@style/Divider"/>
+
+    <!-- Bookmarks -->
+    <LinearLayout
+        android:id="@+id/menu_bookmarks"
+        style="@style/MenuRow">
+        <ImageView style="@style/MenuIcon"
+            android:src="@drawable/ic_bookmark"
+            android:tint="#ffffff"/>
+        <TextView style="@style/MenuText"
+            android:text="Bookmarks"/>
+    </LinearLayout>
+
+    <!-- Share -->
+    <LinearLayout
+        android:id="@+id/menu_share"
+        style="@style/MenuRow">
+        <ImageView style="@style/MenuIcon"
+            android:src="@drawable/ic_share"
+            android:tint="#ffffff"/>
+        <TextView style="@style/MenuText"
+            android:text="Share"/>
+    </LinearLayout>
+
+    <!-- Reload -->
+    <LinearLayout
+        android:id="@+id/menu_reload"
+        style="@style/MenuRow">
+        <ImageView style="@style/MenuIcon"
+            android:src="@drawable/ic_refresh"
+            android:tint="#ffffff"/>
+        <TextView style="@style/MenuText"
+            android:text="Reload Page"/>
+    </LinearLayout>
+
+    <View style="@style/Divider"/>
+
+    <!-- Settings -->
+    <LinearLayout
+        android:id="@+id/menu_settings"
+        style="@style/MenuRow">
+        <ImageView style="@style/MenuIcon"
+            android:src="@drawable/ic_settings"
+            android:tint="#ffffff"/>
+        <TextView style="@style/MenuText"
+            android:text="Settings"/>
+    </LinearLayout>
+
+    <!-- Clear Data -->
+    <LinearLayout
+        android:id="@+id/menu_clear_data"
+        style="@style/MenuRow">
+        <ImageView style="@style/MenuIcon"
+            android:src="@drawable/ic_delete"
+            android:tint="#f44336"/>
+        <TextView style="@style/MenuText"
+            android:text="Clear Browsing Data"
+            android:textColor="#f44336"/>
+    </LinearLayout>
+
+</LinearLayout>

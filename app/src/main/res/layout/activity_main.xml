@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212">
+
+    <!-- ══ PRIVATE MODE INDICATOR BAR ══ -->
+    <LinearLayout
+        android:id="@+id/private_mode_bar"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:background="#1a0a2e"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/private_mode_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🕵️ Private Mode"
+            android:textColor="#ce93d8"
+            android:textSize="12sp"
+            android:letterSpacing="0.05"/>
+
+    </LinearLayout>
+
+    <!-- ══ TOOLBAR ══ -->
+    <LinearLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#1e1e1e"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:elevation="4dp">
+
+        <!-- SSL Icon / Globe -->
+        <ImageView
+            android:id="@+id/ssl_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="6dp"
+            android:src="@drawable/ic_globe"
+            android:contentDescription="SSL Status"/>
+
+        <!-- Address Bar Container -->
+        <LinearLayout
+            android:id="@+id/address_bar_container"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_address_bar"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:paddingEnd="6dp"
+            android:elevation="2dp">
+
+            <!-- URL EditText -->
+            <EditText
+                android:id="@+id/address_bar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:textColor="#ffffff"
+                android:textColorHint="#888888"
+                android:textSize="14sp"
+                android:hint="Search or enter address"
+                android:singleLine="true"
+                android:imeOptions="actionGo|flagNoExtractUi"
+                android:inputType="textUri"
+                android:selectAllOnFocus="true"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <!-- Clear (✕) Button -->
+            <ImageButton
+                android:id="@+id/btn_clear"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_close"
+                android:padding="4dp"
+                android:visibility="gone"
+                android:contentDescription="Clear"/>
+
+        </LinearLayout>
+
+        <!-- Tab Count Badge + Button -->
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp">
+
+            <ImageButton
+                android:id="@+id/btn_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_tabs"
+                android:padding="8dp"
+                android:contentDescription="Tabs"/>
+
+            <TextView
+                android:id="@+id/tab_count_badge"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/tab_badge_normal"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                android:textStyle="bold"/>
+
+        </FrameLayout>
+
+        <!-- Menu (⋮) Button -->
+        <ImageButton
+            android:id="@+id/btn_menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_more_vert"
+            android:padding="8dp"
+            android:contentDescription="Menu"/>
+
+    </LinearLayout>
+
+    <!-- ══ PROGRESS BAR ══ -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:max="100"
+        android:progress="0"
+        android:progressTint="#2979ff"
+        android:progressBackgroundTint="#333333"
+        android:visibility="gone"/>
+
+    <!-- ══ SUGGESTION DROPDOWN ══ -->
+    <LinearLayout
+        android:id="@+id/suggestion_dropdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1e1e1e"
+        android:orientation="vertical"
+        android:elevation="8dp"
+        android:visibility="gone"/>
+
+    <!-- ══ WEBVIEW CONTAINER ══ -->
+    <FrameLayout
+        android:id="@+id/webview_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#ffffff"/>
+
+    <!-- ══ BOTTOM NAVIGATION BAR ══ -->
+    <LinearLayout
+        android:id="@+id/bottom_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="#1e1e1e"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:elevation="8dp">
+
+        <!-- Back -->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="12dp"
+            android:alpha="0.4"
+            android:contentDescription="Back"/>
+
+        <!-- Forward -->
+        <ImageButton
+            android:id="@+id/btn_forward"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_forward"
+            android:padding="12dp"
+            android:alpha="0.4"
+            android:contentDescription="Forward"/>
+
+        <!-- Home -->
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_home"
+            android:padding="12dp"
+            android:contentDescription="Home"/>
+
+        <!-- Bookmarks -->
+        <ImageButton
+            android:id="@+id/btn_bookmarks"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_bookmark"
+            android:padding="12dp"
+            android:contentDescription="Bookmarks"/>
+
+    </LinearLayout>
+
+</LinearLayout>

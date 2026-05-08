@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Privacy Browser Pro — Data Extraction Rules
+    Prevents sensitive browsing data from being
+    backed up to Google Drive / Android Backup.
+
+    Privacy guarantee:
+     NO browsing history backed up
+     NO cookies backed up
+     NO cache backed up
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="file" path="databases/"/>
+        <exclude domain="file" path="shared_prefs/"/>
+        <exclude domain="cache"/>
+        <exclude domain="sharedpref"/>
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="file" path="databases/"/>
+        <exclude domain="file" path="shared_prefs/"/>
+        <exclude domain="cache"/>
+    </device-transfer>
+</data-extraction-rules>
